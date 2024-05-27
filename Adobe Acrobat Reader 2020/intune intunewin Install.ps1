@@ -13,3 +13,5 @@ Write-Host "Downloading Script"
 Invoke-WebRequest -Uri $installScript -OutFile $installScriptPath
 
 & $installScriptPath
+
+Remove-Item -Path $installScriptPath -Force
