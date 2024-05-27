@@ -7,6 +7,8 @@ $baseInstallerPath = "C:\Temp\AcroRdr20202000130002_MUI.exe"
 $patchPath = "C:\Temp\AcroRdr2020Upd2000530636_MUI.msp"
 $rootPath = "C:\Temp"
 
+$ProgressPreference = 'SilentlyContinue'
+
 # Create the directory if it doesn't exist
 if (-not (Test-Path -Path $rootPath)) {
     New-Item -ItemType Directory -Path (Split-Path -Path $rootPath)
