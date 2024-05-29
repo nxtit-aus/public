@@ -28,6 +28,6 @@ Start-Process -FilePath "msiexec.exe" -ArgumentList "/p $patchPath /qn" -Wait -V
 Write-Host "Finished Installation of May 2024 Patch"
 
 # Clean up
-Write-Host "Removing Files"
-Remove-Item -Path $baseInstallerPath, $patchPath -Force
-Write-Host "Finshed Removing files"
+#Write-Host "Removing Files"
+#Remove-Item -Path $baseInstallerPath, $patchPath -Force
+#Write-Host "Finshed Removing files"
