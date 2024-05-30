@@ -1,16 +1,13 @@
 [CmdletBinding()]
 Param (
-    #[Parameter(Mandatory = $True)]
-    #[String]$LTServer,
+    [Parameter(Mandatory = $True)]
+    [String]$LTServer,
     [Parameter(Mandatory = $True)]
     [String]$LocID,
     [Parameter(Mandatory = $True)]
     [String]$Token
 )
 Start-Transcript -Path "C:\Windows\Temp\Ltinstall.log" -Append
-
-#Hardcoded for now...
-$LTServer = "https://nxtit.hostedrmm.com"
 
 #Run script in 64bit PowerShell to enumerate correct path for pnputil
 If ($ENV:PROCESSOR_ARCHITEW6432 -eq "AMD64") {
