@@ -24,7 +24,7 @@ if (!(Test-Path $FolderPath)) {
 
 # .\Install-ScreenConnect.ps1 -Client "ClientName" -Department "No Consent" -DeviceType "No Consent"
 # Install ScreenConnect
-wget "https://$Domain.screenconnect.com/Bin/ScreenConnect.ClientSetup.msi?e=Access&y=Guest&c=$Client&c=&c=$Department&c=$DeviceType&c=&c=&c=&c=" -OutFile $FolderPath\ScreenConnect.msi
+Invoke-WebRequest "https://$Domain.screenconnect.com/Bin/ScreenConnect.ClientSetup.msi?e=Access&y=Guest&c=$Client&c=&c=$Department&c=$DeviceType&c=&c=&c=&c=" -OutFile $FolderPath\ScreenConnect.msi
 
 Start-Process "msiexec.exe" -ArgumentList "/i", "$env:ProgramData\Microsoft\IntuneManagementExtension\Apps\ScreenConnect\ScreenConnect.msi", "/qn", "/l*v", "`"$env:ProgramData\Microsoft\IntuneManagementExtension\Logs\App-Install-ScreenConnect.log`"" -Wait
 
